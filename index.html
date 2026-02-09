@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎀 美丽顾问 - 小美</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- 头部 -->
+        <div class="chat-header">
+            <div class="avatar">
+                <span>🎀</span>
+            </div>
+            <div class="header-info">
+                <h1>美丽顾问 - 小美</h1>
+                <p class="status">🟢 在线</p>
+            </div>
+            <button class="menu-btn">⋮</button>
+        </div>
+
+        <!-- 欢迎画面 -->
+        <div class="welcome-screen" id="welcomeScreen">
+            <div class="welcome-content">
+                <div class="welcome-avatar">🎀</div>
+                <h2>欢迎来到小美医美咨询</h2>
+                <p>我是小美，你的美丽顾问～</p>
+                <p>有什么想了解的医美问题，都可以问我哦！</p>
+                <button class="start-btn" onclick="startChat()">开始咨询 💬</button>
+                
+                <div class="quick-actions">
+                    <h3>快捷问题</h3>
+                    <button onclick="askQuestion('我想了解玻尿酸填充')">💉 玻尿酸填充</button>
+                    <button onclick="askQuestion('水光针有什么效果')">💧 水光针</button>
+                    <button onclick="askQuestion('双眼皮手术')">👁️ 双眼皮</button>
+                    <button onclick="askQuestion('有什么优惠活动')">🎁 优惠活动</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 聊天区域 -->
+        <div class="chat-messages" id="chatMessages">
+            <!-- 消息会在这里显示 -->
+        </div>
+
+        <!-- 输入区域 -->
+        <div class="input-area" id="inputArea">
+            <div class="quick-tags">
+                <span onclick="insertTag('💉')">💉</span>
+                <span onclick="insertTag('💧')">💧</span>
+                <span onclick="insertTag('👁️')">👁️</span>
+                <span onclick="insertTag('🎁')">🎁</span>
+                <span onclick="insertTag('❤️')">❤️</span>
+            </div>
+            <div class="input-row">
+                <input type="text" id="messageInput" placeholder="输入您的问题..." onkeypress="handleKeyPress(event)">
+                <button class="send-btn" onclick="sendMessage()">发送 ✨</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 二维码弹窗 -->
+    <div class="modal" id="qrModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3>📱 扫码保存联系小美</h3>
+            <div id="qrcode"></div>
+            <p>长按图片保存到手机</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>
