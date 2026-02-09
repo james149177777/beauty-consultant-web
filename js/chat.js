@@ -86,8 +86,8 @@ function formatMessage(text) {
     // 加粗处理
     text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     
-    // 列表 = text.replace(/• /处理
-    textg, '• ');
+    // 列表處理
+    text = text.replace(/• /g, '• ');
     
     return text;
 }
